@@ -1,0 +1,49 @@
+.home_button {
+  font-family: Tomorrow, sans-serif;
+  width: 20%;
+  background: #c1c9c8;
+  box-shadow: 0px 2px 0px 0px #a9a9a9, 0px -2px 0px 0px #d7e2e0,
+    2px 0px 0px 0px #a9a9a9, -2px 0px 0px 0px #d7e2e0;
+
+  align-items: center;
+  box-sizing: border-box;
+  text-align: center;
+}
+.home_button:active {
+  box-shadow: 0px 2px 0px 0px #d7e2e0, 0px -2px 0px 0px #a9a9a9,
+    2px 0px 0px 0px #d7e2e0, -2px 0px 0px 0px #a9a9a9;
+}
+
+.home {
+  height: calc(100vh - 1vh);
+}
+.home_card {
+  height: calc(100vh - 200px);
+}
+.home_card_body {
+  clip-path: polygon(95% 0, 100% 12%, 100% 100%, 6% 100%, 0% 88%, 0 0);
+
+  background-color: #121629;
+  border: 3px solid #c1c9c8;
+  box-shadow: 0px 2px 0px 0px #d7e2e0, 0px -2px 0px 0px #a9a9a9,
+    2px 0px 0px 0px #d7e2e0, -2px 0px 0px 0px #a9a9a9;
+}
+.home_input {
+  background: #c1c9c8;
+  box-shadow: 0px 1px 0px 0px #a9a9a9, 0px -1px 0px 0px #d7e2e0,
+    1px 0px 0px 0px #a9a9a9, -1px 0px 0px 0px #d7e2e0;
+  box-sizing: border-box;
+}
+
+.truncate {
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.green {
+  color: greenyellow;
+}
+.red {
+  color: red;
+}

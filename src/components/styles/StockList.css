@@ -1,0 +1,17 @@
+li {
+  height: 30px;
+  margin-bottom: 10px;
+  background-color: #b8c1ec;
+  border-bottom: 1px solid #121629;
+  width: 80%;
+  align-items: center;
+}
+ul {
+  align-items: center;
+}
+
+.rowStock {
+  height: 40px;
+  border-bottom: 1px solid #dcdcdc52;
+  align-items: center;
+}

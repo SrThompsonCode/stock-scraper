@@ -1,0 +1,33 @@
+@import url("https://fonts.googleapis.com/css?family=Barlow|Tomorrow:400,700&display=swap");
+
+.body {
+  height: calc(100vh - 52px);
+  /* background-color: #c0c7c8; */
+  /* display: flex; */
+}
+
+.body_card {
+  height: 75vh;
+}
+.body_input {
+  background: #c1c9c8;
+  box-shadow: 0px 1px 0px 0px #a9a9a9, 0px -1px 0px 0px #d7e2e0,
+    1px 0px 0px 0px #a9a9a9, -1px 0px 0px 0px #d7e2e0;
+  box-sizing: border-box;
+}
+
+.body_button {
+  font-family: Tomorrow, sans-serif;
+  width: 20%;
+  background: #c1c9c8;
+  box-shadow: 0px 2px 0px 0px #a9a9a9, 0px -2px 0px 0px #d7e2e0,
+    2px 0px 0px 0px #a9a9a9, -2px 0px 0px 0px #d7e2e0;
+
+  align-items: center;
+  box-sizing: border-box;
+  text-align: center;
+}
+.body_button:active {
+  box-shadow: 0px 2px 0px 0px #d7e2e0, 0px -2px 0px 0px #a9a9a9,
+    2px 0px 0px 0px #d7e2e0, -2px 0px 0px 0px #a9a9a9;
+}

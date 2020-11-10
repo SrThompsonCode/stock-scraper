@@ -1,0 +1,12 @@
+.footer {
+  margin-top: 1rem;
+  padding: 0.4rem;
+  background: rgba(0, 0, 0, 0.1);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+.footer_p {
+  font-family: "Fira Mono", monospace;
+}

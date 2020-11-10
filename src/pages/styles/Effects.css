@@ -1,0 +1,112 @@
+.anim-scaning {
+  font-size: 50px;
+  animation: glitch 1s linear infinite;
+}
+@keyframes glitch {
+  2%,
+  64% {
+    transform: translate(2px, 0) skew(0deg);
+  }
+  4%,
+  60% {
+    transform: translate(-2px, 0) skew(0deg);
+  }
+  62% {
+    transform: translate(0, 0) skew(5deg);
+  }
+}
+
+.anim-scaning:before,
+.anim-scaning:after {
+  content: attr(title);
+  position: absolute;
+  left: 0;
+}
+
+.anim-scaning:before {
+  animation: glitchTop 1s linear infinite;
+  clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+}
+
+@keyframes glitchTop {
+  2%,
+  64% {
+    transform: translate(2px, -2px);
+  }
+  4%,
+  60% {
+    transform: translate(-2px, 2px);
+  }
+  62% {
+    transform: translate(13px, -1px) skew(-13deg);
+  }
+}
+.anim-scaning:after {
+  animation: glitchBotom 1.5s linear infinite;
+  clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+  -webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+}
+@keyframes glitchBotom {
+  2%,
+  64% {
+    transform: translate(-2px, 0);
+  }
+  4%,
+  60% {
+    transform: translate(-2px, 0);
+  }
+  62% {
+    transform: translate(-22px, 5px) skew(21deg);
+  }
+}
+
+.anim-luminance {
+  background: 50% 100% / 50% 50% no-repeat
+    radial-gradient(ellipse at bottom, #fff, transparent, transparent);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-size: 50px;
+  /* font-family: "Source Sans Pro", sans-serif; */
+  animation: reveal 3000ms ease-in-out forwards 200ms,
+    glow 2500ms linear infinite 2000ms;
+}
+
+@keyframes reveal {
+  80% {
+    letter-spacing: 8px;
+  }
+  100% {
+    background-size: 300% 300%;
+  }
+}
+@keyframes glow {
+  40% {
+    text-shadow: 0 0 8px #fff;
+  }
+}
+
+.anim_shinning {
+  position: relative;
+  font-family: sans-serif;
+  text-transform: uppercase;
+  font-size: 2em;
+  letter-spacing: 4px;
+  overflow: hidden;
+  background: linear-gradient(90deg, #000, #fff, #000);
+  background-repeat: no-repeat;
+  background-size: 80%;
+  animation: animate 3s linear infinite;
+  background-clip: text;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0);
+}
+
+@keyframes animate {
+  0% {
+    background-position: -500%;
+  }
+  100% {
+    background-position: 500%;
+  }
+}

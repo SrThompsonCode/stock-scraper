@@ -1,0 +1,46 @@
+.navbar_logo {
+  border-radius: 50%;
+}
+.navbar {
+  line-height: 50px;
+  max-height: 70px;
+  min-height: 70px;
+}
+.navbar_name {
+  border-right: 2px solid rgba(255, 255, 255, 0.75);
+  font-size: 24px;
+  /* text-align: center; */
+  width: 360px;
+  /* margin: 0 auto; */
+
+  position: relative;
+  top: 50%;
+
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.navbar_background {
+  background-color: #121629;
+}
+
+.anim_typewriter {
+  animation: typewriter 4s steps(40) 1s 1 normal both,
+    blinkTextCursor 500ms steps(40) infinite normal;
+}
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 360px;
+  }
+}
+@keyframes blinkTextCursor {
+  from {
+    border-right-color: rgba(255, 255, 255, 0.75);
+  }
+  to {
+    border-right-color: transparent;
+  }
+}

@@ -13,12 +13,12 @@ function StockList(props) {
           className='truncate col-5'>
           {props.data.name}
         </a>
-        <span className='col-2'>$ {props.data.price}</span>
-        <span className='col-3 text-center'>
+        <span className='col-2 truncate '>$ {props.data.price}</span>
+        <span className='col-3 text-center truncate '>
           {Moment(props.data.fecha).format("DD/MM/YYYY hh:mm:ss")}
         </span>
         <span
-          className={`col-2 font-weight-bold text-center ${
+          className={`truncate  col  font-weight-bold text-center ${
             props.data.stock ? "green" : "red"
           }`}>
           {props.data.stock ? "STOCK" : "NO HAY STOCK"}

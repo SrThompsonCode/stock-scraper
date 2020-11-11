@@ -18,7 +18,7 @@
   height: calc(100vh - 1vh);
 }
 .home_card {
-  height: calc(100vh - 200px);
+  height: calc(100vh - 240px);
 }
 .home_card_body {
   clip-path: polygon(95% 0, 100% 12%, 100% 100%, 6% 100%, 0% 88%, 0 0);

@@ -3,6 +3,7 @@ import "../components/styles/CyberPunkBody.css";
 import "./styles/Home.css";
 import StockList from "../components/StockList";
 import "./styles/Effects.css";
+import { ResponsiveEmbed } from "react-bootstrap";
 
 class Home extends React.Component {
   constructor(props) {
@@ -45,28 +46,30 @@ class Home extends React.Component {
   }
 
   fetchStock = async (url) => {
-    if (this.state.data.length == 15) {
+    if (this.state.data.length === 15) {
       this.setState({ data: [] });
     }
     this.setState({ loading: false, error: false });
 
     // const urlToFech = `http://localhost:8080/http://localhost:29386/webscraper?url=${url}`;
-    const urlToFech = `https://stock-scrapi.herokuapp.com/webscraper?url=${url}`;
 
     try {
-      const response = await fetch(urlToFech);
-      const data = await response.json();
+      const urlToFech = `https://stock-scrapi.herokuapp.com/webscraper?url=${url}`;
 
-      if (data.status == 404) {
-        this.setState({ error: data.title });
+      const response = await fetch(urlToFech);
+
+      const json = await response.json();
+      if (json.data.error) {
+        this.componentWillUnmount();
+        this.setState({ error: true });
       } else {
         this.setState({
-          data: [].concat(this.state.data, data),
+          data: [].concat(this.state.data, json.data),
           key: this.state.key + 1,
         });
       }
     } catch (error) {
-      console.log(error);
+      this.setState({ error: "Invalid URL", loading: false });
     }
   };
 
@@ -87,11 +90,12 @@ class Home extends React.Component {
                 <input
                   required={true}
                   id='urlToGet'
-                  type='text'
-                  placeholder='Give me that'
-                  className=' btn-light form-control form-control-sm home_input mr-3 rounded-0 w-75 '
+                  type='url'
+                  minLength='5'
+                  placeholder='Insert URL'
+                  className='col-7 btn-light form-control form-control-sm  mr-3 rounded-0 home_input'
                 />
-                <button className='btn btn-sm rounded-0 btn-light col-1 home_button '>
+                <button className='btn btn-sm rounded-0 btn-light home_button '>
                   Scan
                 </button>
               </div>
@@ -112,9 +116,9 @@ class Home extends React.Component {
                   {!this.state.error &&
                     stockList &&
                     stockList.map(
-                      (stock) =>
+                      (stock, i) =>
                         stock.name.length > 0 && (
-                          <StockList key={stock.key} data={stock} />
+                          <StockList key={i} data={stock} />
                         )
                     )}
                 </div>

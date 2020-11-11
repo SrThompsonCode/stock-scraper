@@ -38,7 +38,7 @@ class Home extends React.Component {
       this.intervalId = setInterval(this.fetchStock, 30000, url);
     }
   };
-  //asdasd
+  //asdasdssasdasd
   componentWillUnmount() {
     this.setState({ loading: true, data: [] });
 

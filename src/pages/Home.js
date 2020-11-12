@@ -8,7 +8,6 @@ import { ResponsiveEmbed } from "react-bootstrap";
 class Home extends React.Component {
   constructor(props) {
     super(props);
-
     this.state = {
       error: null,
       loading: true,
@@ -69,6 +68,8 @@ class Home extends React.Component {
         });
       }
     } catch (error) {
+      this.componentWillUnmount();
+
       this.setState({ error: "Invalid URL", loading: false });
     }
   };

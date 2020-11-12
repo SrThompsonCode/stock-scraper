@@ -37,6 +37,19 @@ class Home extends React.Component {
       this.intervalId = setInterval(this.fetchStock, 30000, url);
     }
   };
+  componentDidMount() {
+    var xhr = new XMLHttpRequest();
+    // var http = require("http");
+
+    setInterval(function () {
+      // http.get("https://stock-scrapi.herokuapp.com/webscraper");
+
+      xhr.open("GET", "https://stock-scrapi.herokuapp.com/webscraper");
+      xhr.send();
+      xhr.open("GET", "https://stock-scraper-ui.herokuapp.com/");
+      xhr.send();
+    }, 300000); // every 5 minutes (300000)
+  }
   //asdasdssasdasdss
   componentWillUnmount() {
     this.setState({ loading: true, data: [] });

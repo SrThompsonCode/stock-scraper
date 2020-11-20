@@ -3,9 +3,21 @@
 }
 .navbar {
   line-height: 50px;
-  max-height: 70px;
+  /* max-height: 70px; */
   min-height: 70px;
 }
+.nav-icons {
+  line-height: 1;
+}
+.a-trasnparent {
+  text-decoration: none;
+  color: #c4c5c9;
+}
+
+.contact-icon:hover {
+  color: yellow;
+}
+
 .navbar_name {
   border-right: 2px solid rgba(255, 255, 255, 0.75);
   font-size: 24px;

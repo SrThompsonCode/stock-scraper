@@ -4,15 +4,18 @@ import "./styles/Home.css";
 import StockList from "../components/StockList";
 import "./styles/Effects.css";
 import { ResponsiveEmbed } from "react-bootstrap";
+import Moment from "moment/dist/moment";
 
 class Home extends React.Component {
   constructor(props) {
     super(props);
+
     this.state = {
       error: null,
       loading: true,
       key: 1,
       urlToScan: "",
+      fechaInicial: "",
       data: [
         {
           name: "",
@@ -31,10 +34,13 @@ class Home extends React.Component {
     const url = document.getElementById("urlToGet").value;
 
     if (url.length > 0) {
+      this.setState({
+        fechaInicial: Moment(Date.now()).format("DD/MM/YYYY hh:mm:ss"),
+      });
       document.getElementById("urlToGet").value = "";
       this.componentWillUnmount();
       this.fetchStock(url);
-      this.intervalId = setInterval(this.fetchStock, 30000, url);
+      this.intervalId = setInterval(this.fetchStock, 45000, url);
     }
   };
   componentDidMount() {
@@ -45,8 +51,6 @@ class Home extends React.Component {
       // http.get("https://stock-scrapi.herokuapp.com/webscraper");
 
       xhr.open("GET", "https://stock-scrapi.herokuapp.com/webscraper");
-      xhr.send();
-      xhr.open("GET", "https://stock-scraper-ui.herokuapp.com/");
       xhr.send();
     }, 300000); // every 5 minutes (300000)
   }
@@ -60,6 +64,7 @@ class Home extends React.Component {
   fetchStock = async (url) => {
     if (this.state.data.length === 15) {
       this.setState({ data: [] });
+      console.log(url);
     }
     this.setState({ loading: false, error: false });
 
@@ -78,12 +83,13 @@ class Home extends React.Component {
         this.setState({
           data: [].concat(this.state.data, json.data),
           key: this.state.key + 1,
+          urlToScan: url,
         });
       }
     } catch (error) {
       this.componentWillUnmount();
 
-      this.setState({ error: "Invalid URL", loading: false });
+      this.setState({ error: "Invalid URL", loading: false, urlToScan: "" });
     }
   };
 
@@ -107,12 +113,32 @@ class Home extends React.Component {
                   type='url'
                   minLength='5'
                   placeholder='Insert URL'
-                  className='col-7 btn-light form-control form-control-sm  mr-3 rounded-0 home_input'
+                  className='col-7 home_input  mr-3 rounded-0 '
                 />
-                <button className='btn btn-sm rounded-0 btn-light home_button '>
-                  Scan
+                {/* <button className='btn btn-sm rounded-0 btn-light home_button '>
+                  SCAN_
+                </button> */}
+                <button class=' CyberPunkBody_btn'>
+                  <span class='CyberPunkBody_btn__content'>SCAN_</span>
+
+                  <span class='CyberPunkBody_btn__label'>2077</span>
                 </button>
               </div>
+              {this.state.urlToScan.length > 0 && (
+                <div className='text-left  header-link'>
+                  <span className='font-weight-bold text-light'>Fecha: </span>
+                  {this.state.fechaInicial}
+                  <p className='text-left truncate'>
+                    <span className='font-weight-bold text-light'>URL: </span>
+                    <a
+                      className='link-url'
+                      target='_blank'
+                      href={this.state.urlToScan}>
+                      {this.state.urlToScan}
+                    </a>
+                  </p>
+                </div>
+              )}
             </form>
 
             <div className='card rounded-0 CyberPunkBody_card  home_card bg-light mb-3'>

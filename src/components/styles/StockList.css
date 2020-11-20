@@ -14,6 +14,7 @@ ul {
   height: 40px;
   border-bottom: 1px solid #dcdcdc52;
   align-items: center;
+  color: white;
 }
 @media screen and (max-width: 678px) {
   .col-3,

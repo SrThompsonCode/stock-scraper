@@ -1,13 +1,26 @@
+:root {
+  --yellow-color: #fcee09;
+  --red-color: #ff003c;
+  --black-color: #050a0e;
+  --blue-color: #00f0ff;
+  --grey-color: #a9a9a9;
+}
+
 .home_button {
   font-family: Tomorrow, sans-serif;
   width: 20%;
   background: #c1c9c8;
-  box-shadow: 0px 2px 0px 0px #a9a9a9, 0px -2px 0px 0px #d7e2e0,
-    2px 0px 0px 0px #a9a9a9, -2px 0px 0px 0px #d7e2e0;
+  box-shadow: 0px 2px 0px 0px #00f0ff, 0px -2px 0px 0px #d7e2e0,
+    2px 0px 0px 0px #00f0ff, -2px 0px 0px 0px #d7e2e0;
 
   align-items: center;
   box-sizing: border-box;
   text-align: center;
+  outline: none;
+}
+.home_button:active {
+  box-shadow: 0px 2px 0px 0px #d7e2e0, 0px -2px 0px 0px #a9a9a9,
+    2px 0px 0px 0px #d7e2e0, -2px 0px 0px 0px #a9a9a9;
 }
 .home_button:active {
   box-shadow: 0px 2px 0px 0px #d7e2e0, 0px -2px 0px 0px #a9a9a9,
@@ -18,7 +31,7 @@
   height: calc(100vh - 1vh);
 }
 .home_card {
-  height: calc(100vh - 240px);
+  height: calc(100vh - 280px);
 }
 .home_card_body {
   clip-path: polygon(95% 0, 100% 12%, 100% 100%, 6% 100%, 0% 88%, 0 0);
@@ -29,17 +42,42 @@
     2px 0px 0px 0px #d7e2e0, -2px 0px 0px 0px #a9a9a9;
 }
 .home_input {
-  background: #c1c9c8;
-  box-shadow: 0px 1px 0px 0px #a9a9a9, 0px -1px 0px 0px #d7e2e0,
-    1px 0px 0px 0px #a9a9a9, -1px 0px 0px 0px #d7e2e0;
+  height: 30px;
+  border: none;
+  border-bottom: 1px solid #121629;
+  border-right: 1px solid #121629;
+  background: gainsboro;
+  /* box-shadow: 0px 1px 0px 0px #a9a9a9, 0px -1px 0px 0px #d7e2e0,
+    1px 0px 0px 0px #a9a9a9, -1px 0px 0px 0px #d7e2e0; */
   box-sizing: border-box;
 }
 
+.home_input:focus {
+  outline: 10px;
+}
+.home_input:focus-within {
+  background-color: rgb(238, 238, 238);
+}
 .truncate {
   width: 100%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  /* margin: 0; */
+}
+
+.header-link {
+  width: 93%;
+  border-left: 4px solid #121629;
+  padding-left: 10px;
+}
+.link-url {
+  text-decoration: none;
+  color: aqua;
+  /* color: #b8c1ec; */
+}
+.link-url:hover {
+  color: yellow;
 }
 .green {
   color: greenyellow;

@@ -15,18 +15,28 @@
 }
 
 .CyberPunkBody_btn {
-  width: 230px;
-  height: 60px;
+  width: 20%;
+  height: 30px;
   border: 0;
   outline: none;
-  background-color: var(--black-color);
+  background-color: gainsboro;
   cursor: pointer;
   position: relative;
   font-family: Tomorrow, sans-serif;
   font-size: 0.85rem;
   text-transform: uppercase;
   color: var(--black-color);
-  clip-path: polygon(92% 0, 100% 25%, 100% 100%, 8% 100%, 0% 75%, 0 0);
+  /* clip-path: polygon(100% 0, 100% 100%, 100% 70%, 0% 100%, 0% 0%, 0 0); */
+}
+.CyberPunkBody_btn:hover {
+  outline: none;
+  background-color: #fcee09;
+
+  /* clip-path: polygon(100% 0, 100% 100%, 100% 70%, 0% 100%, 0% 0%, 0 0); */
+}
+.CyberPunkBody_btn__content:hover {
+  outline: none;
+  background-color: #fcee09;
 }
 
 .CyberPunkBody_btn__content {
@@ -38,8 +48,11 @@
   left: 2px;
   right: 2px;
   bottom: 2px;
-  background-color: var(--yellow-color);
-  clip-path: polygon(92% 0, 100% 25%, 100% 100%, 8% 100%, 0% 75%, 0 0);
+  background-color: gainsboro;
+  /* clip-path: polygon(92% 0, 100% 25%, 100% 100%, 8% 100%, 0% 100%, 0 0); */
+}
+.CyberPunkBody_btn__content:hover {
+  outline: none;
 }
 
 .CyberPunkBody_btn--secondary {

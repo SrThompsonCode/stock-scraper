@@ -8,7 +8,8 @@ import "../FontAwesome";
 const Footer = () => (
   <div className='footer text-center justify-content-center '>
     <span className='footer_p '>
-      [ COMPRAGAMER | VENEX | LOGITECH | DARTO ]
+      [ COMPRAGAMER | VENEX | LOGITECH | DARTO | SONY | PHILIPS | FALABELLA |
+      REX ]
     </span>
     <div>srthompsoncode@gmail.com</div>
   </div>

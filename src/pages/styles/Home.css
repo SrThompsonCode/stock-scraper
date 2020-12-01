@@ -22,10 +22,6 @@
   box-shadow: 0px 2px 0px 0px #d7e2e0, 0px -2px 0px 0px #a9a9a9,
     2px 0px 0px 0px #d7e2e0, -2px 0px 0px 0px #a9a9a9;
 }
-.home_button:active {
-  box-shadow: 0px 2px 0px 0px #d7e2e0, 0px -2px 0px 0px #a9a9a9,
-    2px 0px 0px 0px #d7e2e0, -2px 0px 0px 0px #a9a9a9;
-}
 
 .home {
   height: calc(100vh - 1vh);

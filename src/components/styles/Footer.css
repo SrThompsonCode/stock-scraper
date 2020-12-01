@@ -10,3 +10,8 @@
 .footer_p {
   color: aqua;
 }
+@media screen and (max-width: 678px) {
+  .footer {
+    display: none;
+  }
+}

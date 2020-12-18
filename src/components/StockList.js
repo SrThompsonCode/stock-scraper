@@ -23,7 +23,7 @@ function StockList(props) {
         <span title={props.data.name} className='truncate col-5'>
           {props.data.name}
         </span>
-        <span className='col-2 truncate '>$ {props.data.price}</span>
+        {/* <span className='col-2 truncate '>$ {props.data.price}</span> */}
         <NumberFormat
           value={props.data.price.replace(/^0+/, "")}
           displayType={"text"}
